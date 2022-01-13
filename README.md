@@ -21,11 +21,19 @@ Before building the Neural network we need to generate data .
 
 The first step is to create a set of combinations of model, option and market parameters (strike, maturities, volatility, riskfree rate, ...) 
 
+Based on  this paper : [Machine-Learning-methods-Coperneec](https://canopee-group.com/wp-content/uploads/2020/12/Machine-Learning-methods-Coperneec.pdf) 
+the features to select are : 
+
+- Maturity (yearly)
+- Risk
+- the ratio S/k (Moneyness) 
+- Volatility
+
 
 ![](images/b1.PNG)
 
 
-The model is built using the functional functionality of keras . It is composed of Dense layers, BatchNormalization layer and Dropout layer to prevent overfitting . The last layer is a Dense layer with 1 neuron as we are dealing with a regression problem and an activation function : relu because the Price option needs to be at least 0. We compile the model using MSE.
+The model is built using the functional API of keras . It is composed of Dense layers, BatchNormalization layer and Dropout layer to prevent overfitting . The last layer is a Dense layer with 1 neuron as we are dealing with a regression problem and an activation function : relu because the Price option needs to be at least 0. We compile the model using MSE.
 
 After running the model the plotting of the model performance is given by the figure below:
 

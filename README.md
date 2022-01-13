@@ -4,7 +4,7 @@ Context : A client wants to explore novel methodologies for accelerating the pri
 exotic derivatives.
 
 
-A detailed explanation of the work can be found in the notebook : Basket_Pricing
+A detailed explanation of the work can be found in the notebook : [Basket_Pricing](https://github.com/MariumAZ/Basket_Pricing/blob/main/Basket_Pricing.ipynb)
 
 We approach this problem using two methods : 
 

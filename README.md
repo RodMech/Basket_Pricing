@@ -1,1 +1,61 @@
-# Basket_Pricing
+# Problem Statement : European Basket option pricing with neural network and Monte Carlo solver
+
+Context : A client wants to explore novel methodologies for accelerating the pricing of
+exotic derivatives.
+
+
+A detailed explanation of the work can be found in the notebook : Basket_Pricing
+
+We approach this problem using two methods : 
+
+- Neural Network
+- Monte Carlo solver
+
+and in this work we will be dealing only with European basket call.
+
+
+
+# Steps : 
+
+Before building the Neural network we need to generate data .
+
+The first step is to create a set of combinations of model, option and market parameters (strike, maturities, volatility, riskfree rate, ...) 
+
+
+![](images/b1.PNG)
+
+
+The model is built using the functional functionality of keras . It is composed of Dense layers, BatchNormalization layer and Dropout layer to prevent overfitting . The last layer is a Dense layer with 1 neuron as we are dealing with a regression problem and an activation function : relu because the Price option needs to be at least 0. We compile the model using MSE.
+
+After running the model the plotting of the model performance is given by the figure below:
+
+![](images/b3.PNG)
+
+
+In a second time we produced results using Monte carlo simulations applied on test data .
+And we deduced a comparison of times between the two approaches .
+From  our experiment : with 10 000 data points and with 3000 data points on the test set the Neural network model needs  0.12 seconds to run and the MC algorithm needs 9.85 seconds to run. So Neural Networks are pretty much faster than MC solver especially when our data set increases.
+
+# Further Work : 
+
+1. Optimization
+
+In case we are dealing with a big amount of data points we can make use of the tf.Data Api provided by tensorflow to make it easier for us to batch and shuffle our data.
+
+
+
+2. Hyperparameter Tuning
+
+We can tune the model parameters like learning rate , batch_size, hidden_size using  keras Tuner:
+
+# Bibliography : 
+
+1. [Machine-Learning-methods-Coperneec](https://canopee-group.com/wp-content/uploads/2020/12/Machine-Learning-methods-Coperneec.pdf)
+2. [Accelerating-python-for-exotic-option-pricing](https://developer.nvidia.com/blog/accelerating-python-for-exotic-option-pricing/)
+3. [github.com/shrentseng/Numerical-methods-for-option-pricing](https://github.com/shrentseng/Numerical-methods-for-option-pricing/blob/main/Monte%20Carlo%20simulation%20option%20pricing.ipynb)
+
+
+
+
+
+

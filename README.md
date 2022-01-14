@@ -17,6 +17,8 @@ and in this work we will be dealing only with European basket call.
 
 # Steps : 
 
+**1 .Build and train a neural network model for pricing European Basket options under Black-Scholes assumptions** 
+
 Before building the Neural network we need to generate data .
 
 The first step is to create a set of combinations of model, option and market parameters (strike, maturities, volatility, riskfree rate, ...) 
@@ -29,8 +31,10 @@ the features to select are :
 - the ratio S/k (Moneyness) 
 - Volatility
 
+we could also add correlation  between assets as part of the features but this wasn't done in this work .
 
-![](images/b1.PNG)
+<img src="images/b1.PNG" width="470" height="301">
+
 
 
 The model is built using the functional API of keras . It is composed of Dense layers, BatchNormalization layer and Dropout layer to prevent overfitting . The last layer is a Dense layer with 1 neuron as we are dealing with a regression problem and an activation function : relu because the Price option needs to be at least 0. We compile the model using MSE.
@@ -39,10 +43,15 @@ After running the model the plotting of the model performance is given by the fi
 
 ![](images/b3.PNG)
 
+**2. Compare prices to a traditional numerical solver such as Monte-Carlo, Finite Difference or any other methodology you may deem applicable.**
 
 In a second time we produced results using Monte carlo simulations applied on test data .
 And we deduced a comparison of times between the two approaches .
 From  our experiment : with 10 000 data points and with 3000 data points on the test set the Neural network model needs  0.12 seconds to run and the MC algorithm needs 9.85 seconds to run. So Neural Networks are pretty much faster than MC solver especially when our data set increases.
+
+**3.Compare to the case of 1 asset**
+
+In the case of 1 asset we reduce the correlation matrix to one dimension, previously it was initialized randomly and we can use same model.
 
 # Further Work : 
 

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  notebook:
+    build: 
+      context: ./docker/
+      network: host
+    image: basketpricing
+    ports: 
+      - "8888:8888"
+    volumes:
+      - .:/opt/project

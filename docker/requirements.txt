@@ -1,0 +1,7 @@
+scipy
+matplotlib
+numpy
+seaborn
+pandas 
+tensorflow
+jupyterlab==2.1.5

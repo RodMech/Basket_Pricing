@@ -70,6 +70,7 @@ We can tune the model parameters like learning rate , batch_size, hidden_size us
 1. [Machine-Learning-methods-Coperneec](https://canopee-group.com/wp-content/uploads/2020/12/Machine-Learning-methods-Coperneec.pdf)
 2. [Accelerating-python-for-exotic-option-pricing](https://developer.nvidia.com/blog/accelerating-python-for-exotic-option-pricing/)
 3. [github.com/shrentseng/Numerical-methods-for-option-pricing](https://github.com/shrentseng/Numerical-methods-for-option-pricing/blob/main/Monte%20Carlo%20simulation%20option%20pricing.ipynb)
+4. https://github.com/nluciw/pricing_basket_options
 
 
 
